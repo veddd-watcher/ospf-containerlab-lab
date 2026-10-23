@@ -4,9 +4,9 @@ Three FRRouting routers running single-area OSPF, built with Containerlab on an 
 
 ## Topology
 
-
+```
 r1 (1.1.1.1) --10.0.12.0/30-- r2 (2.2.2.2) --10.0.23.0/30-- r3 (3.3.3.3)
-
+```
 
 | Router | Loopback | eth1 | eth2 |
 |---|---|---|---|
@@ -18,10 +18,10 @@ All interfaces are in area 0, with point-to-point network type on the links (no 
 
 ## Reproduce
 
-bash
+```bash
 sudo containerlab deploy -t ospf.clab.yml
 docker exec -it clab-ospf-lab-r1 vtysh
-
+```
 
 Then on each router: set ospf router-id, and put lo and the link interfaces in ip ospf area 0 with ip ospf network point-to-point on the links.
 
